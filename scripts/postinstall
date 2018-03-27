@@ -1,10 +1,15 @@
-#!/usr/bin/env python
+#!/usr/bin/python
 """Installs enrollment profiles with proper user account enrollment."""
 
 # pylint: disable=E0611
 import os
 import subprocess
-from SystemConfiguration import SCDynamicStoreCopyConsoleUser
+
+try:
+    from SystemConfiguration import SCDynamicStoreCopyConsoleUser
+except ImportError:
+    print "This script requires the pyobjc bridge. Please use system python."
+    exit(1)
 
 
 def main():
