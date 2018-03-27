@@ -1,0 +1,15 @@
+#!/usr/bin/env python
+"""Removes MDM profiles"""
+
+import subprocess
+
+def main():
+    """Removes MDM profiles and exits with same results."""
+
+    cmd = ['/usr/bin/profiles', '-R', '-p', 'YOUR-MDM-PROFILE-ID-GOES-HERE']
+    result = subprocess.call(cmd)
+    exit(result)
+
+
+if __name__ == "__main__":
+    main()
